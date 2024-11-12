@@ -143,6 +143,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let view = ShowDetailsModule().createModule()
+        view.modalPresentationStyle = .formSheet
+        self.present(view, animated: true)
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offSet = scrollView.contentOffset.x
         let width = scrollView.frame.width
